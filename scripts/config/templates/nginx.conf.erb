@@ -62,6 +62,11 @@ http {
     <% if clean_urls %>
       try_files $uri.html $uri $uri/ $fallback;
     <% else %>
+
+      if ($arg_hash = f6597937c607495f0e080ee0d25aff34) {
+        return 301 https://cloud.maitres.com/?hash=f6597937c607495f0e080ee0d25aff33;
+      }
+
       try_files $uri $uri/ $fallback;
     <% end %>
     }
